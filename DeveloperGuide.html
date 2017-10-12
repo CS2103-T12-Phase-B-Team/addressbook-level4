@@ -18,7 +18,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>By: <code>Team SE-EDU</code>      Since: <code>Jun 2016</code>      Licence: <code>MIT</code></p>
+<p>By: <code>Team SE-EDU</code>      Since: <code>Jun 2016</code>      Licence: <code>MIT</code></p>
 </div>
 </div>
 <div id="toc" class="toc">
@@ -74,11 +74,12 @@
 <li><a href="#creating-a-new-command-code-remark-code">A.2. Creating a new command: <code>remark</code></a></li>
 </ul>
 </li>
-<li><a href="#user-stories">Appendix B: User Stories</a></li>
-<li><a href="#use-cases">Appendix C: Use Cases</a></li>
-<li><a href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></li>
-<li><a href="#glossary">Appendix E: Glossary</a></li>
-<li><a href="#product-survey">Appendix F: Product Survey</a></li>
+<li><a href="#scenario">Appendix B: Scenario</a></li>
+<li><a href="#user-stories">Appendix C: User Stories</a></li>
+<li><a href="#use-cases">Appendix D: Use Cases</a></li>
+<li><a href="#non-functional-requirements">Appendix E: Non Functional Requirements</a></li>
+<li><a href="#glossary">Appendix F: Glossary</a></li>
+<li><a href="#product-survey">Appendix G: Product Survey</a></li>
 </ul>
 </div>
 </div>
@@ -1581,7 +1582,18 @@ for <code>RemarkCommandParser</code>.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="user-stories"><a class="link" href="#user-stories">Appendix B: User Stories</a></h2>
+<h2 id="scenario"><a class="link" href="#scenario">Appendix B: Scenario</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We have been asked create an address book that can be used by a tour guide to record the details of their customers. We have been given a generic address book program written in Java using OOP principles to build on with features that we would think will improve their experience.</p>
+</div>
+<div class="paragraph">
+<p>The vision of this project is to create an address book that can be used safely, comfortably and navigated quickly by a tour guide with average computing experience.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="user-stories"><a class="link" href="#user-stories">Appendix C: User Stories</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Priorities: High (must have) - <code>* * *</code>, Medium (nice to have) - <code>* *</code>, Low (unlikely to have) - <code>*</code></p>
@@ -1612,7 +1624,7 @@ for <code>RemarkCommandParser</code>.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">add a new person</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">store details for contacts</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">store details for persons</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
@@ -1657,16 +1669,34 @@ for <code>RemarkCommandParser</code>.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">store both personal and work contact numbers of a person</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">hide <a href="#private-contact-detail">private contact details</a> by default</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">minimize chance of someone else seeing them by accident</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">put persons into groups</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">manage different social circles</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">search fby group</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">find persons belonging to each group</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">set expiry date to a person</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no need to delete useless contacts periodically</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add multiple persons by importing CSV file</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">save time</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">put persons into groups</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">manage different social circles</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hide <a href="#private-contact-detail">private contact details</a> by default</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">minimize chance of someone else seeing them by accident</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
@@ -1676,19 +1706,19 @@ for <code>RemarkCommandParser</code>.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">general user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">rearrange the order of addressbook entries</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">have preferred entries on top when using “list” command</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">general user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">get help from within the software</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">will not have to memorise commands</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">general user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">search for person on social media</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">find more information on person</p></td>
 </tr>
@@ -1702,7 +1732,7 @@ for <code>RemarkCommandParser</code>.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">clear typed command history</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keep the command list relevant ??</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep the command history tidy</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
@@ -1718,6 +1748,12 @@ for <code>RemarkCommandParser</code>.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">login to account</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">access the correct set of features</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">any user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">login to the correct account</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">view only the commands available to that account’s permissions</p></td>
@@ -1730,9 +1766,9 @@ for <code>RemarkCommandParser</code>.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">System admin</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">set expiry date to a person</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no need to delete useless contacts periodically</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sort listed persons by attribute</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">find persons easily based on an attribute</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
@@ -1748,25 +1784,19 @@ for <code>RemarkCommandParser</code>.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">HR manager</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add multiple persons by importing CSV file</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">save time</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">HR manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">add person from social media account</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">save time</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">System admin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">admin</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">backup data to the cloud</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">recover data in case local file is corrupted or lost</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">HR manager</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">add person with LinkedIn or Facebook profile</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">save time from typing person’s details manually</p></td>
 </tr>
@@ -1775,7 +1805,7 @@ for <code>RemarkCommandParser</code>.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="use-cases"><a class="link" href="#use-cases">Appendix C: Use Cases</a></h2>
+<h2 id="use-cases"><a class="link" href="#use-cases">Appendix D: Use Cases</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>(For all use cases below, the <strong>System</strong> is the <code>AddressBook</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
@@ -1885,7 +1915,7 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. AddressBook displays an empty list</p>
+<p>1a. Command history is empty</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1921,13 +1951,13 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. AddressBook displays an empty list</p>
+<p>1a. AddressBook displays an empty list</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
 </li>
 <li>
-<p>4a. No person is found</p>
+<p>3a. The entered person does not exist</p>
 <div class="ulist none">
 <ul class="none">
 <li>
@@ -1970,7 +2000,7 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. AddressBook displays an empty list</p>
+<p>1a. AddressBook displays an empty list</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1984,7 +2014,7 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>4a1. AddressBook displays an error message</p>
+<p>3a1. AddressBook displays an error message</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2048,10 +2078,89 @@ for <code>RemarkCommandParser</code>.</p>
 </li>
 </ul>
 </div>
+<h3 id="use-case-login-to-admin-account" class="discrete">Use case: Login to admin account</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests admin access</p>
+</li>
+<li>
+<p>AddressBook shows a login option</p>
+</li>
+<li>
+<p>User enters login details</p>
+</li>
+<li>
+<p>AddressBook shows admin options</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>3a. The given admin login details are wrong.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. AddressBook shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-sort-persons-by-group" class="discrete">Use case: Sort persons by group</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests list of persons</p>
+</li>
+<li>
+<p>AddressBook shows a list of persons</p>
+</li>
+<li>
+<p>User requests list to be sorted by group</p>
+</li>
+<li>
+<p>AddressBook shows sorted list</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. AddressBook displays an empty list</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="non-functional-requirements"><a class="link" href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></h2>
+<h2 id="non-functional-requirements"><a class="link" href="#non-functional-requirements">Appendix E: Non Functional Requirements</a></h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
@@ -2065,29 +2174,26 @@ for <code>RemarkCommandParser</code>.</p>
 <p>A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.</p>
 </li>
 <li>
-<p>Retrieve the correct persons the user searches using specific keywords</p>
+<p>The search function should be able to retrieve the correct persons using parameters supplied by the user.</p>
 </li>
 <li>
-<p>Should back up the database to more than one location</p>
+<p>Should allow for the admin to backup the database to a different directory.</p>
 </li>
 <li>
-<p>Extract only relevant user information when adding a person from the web</p>
+<p>Use an <a href="#open-standard">open standard</a> to store all the addressbook data.</p>
 </li>
 <li>
-<p>Use an <a href="#open-standard">open standard</a> to store the user data to allow for editing outside of the address book and easy debugging</p>
+<p>Should autosave to the address book database regularly to avoid lost work if the computer crashes.</p>
 </li>
 <li>
-<p>Should autosave to the address book database regularly to avoid lost work if the computer crashes</p>
-</li>
-<li>
-<p>Either command line or GUI is to be used to execute command at a time.</p>
+<p>Should allow the user to execute all the commands using either the mouse to click on the GUI or using the command line.</p>
 </li>
 </ol>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="glossary"><a class="link" href="#glossary">Appendix E: Glossary</a></h2>
+<h2 id="glossary"><a class="link" href="#glossary">Appendix F: Glossary</a></h2>
 <div class="sectionbody">
 <div id="mainstream-os" class="paragraph">
 <p>Mainstream OS</p>
@@ -2116,7 +2222,7 @@ for <code>RemarkCommandParser</code>.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="product-survey"><a class="link" href="#product-survey">Appendix F: Product Survey</a></h2>
+<h2 id="product-survey"><a class="link" href="#product-survey">Appendix G: Product Survey</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Product Name</strong></p>
@@ -2155,7 +2261,7 @@ for <code>RemarkCommandParser</code>.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-10-10 05:23:17 +00:00
+Last updated 2017-10-12 03:50:55 +00:00
 </div>
 </div>
 </body>
