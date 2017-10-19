@@ -51,6 +51,7 @@
 <li><a href="#logging">3.2. Logging</a></li>
 <li><a href="#configuration">3.3. Configuration</a></li>
 <li><a href="#autocomplete">3.4. Autocomplete</a></li>
+<li><a href="#expiry-date">3.5. Expiry date</a></li>
 </ul>
 </li>
 <li><a href="#testing">4. Testing</a>
@@ -881,6 +882,49 @@ If the <code>redoStack</code> is empty, then there are no other commands left to
 </div>
 <div class="paragraph">
 <p>One class, command collection, is used to hold the set of commands and a map from each command word to the command usage. This is used by the trie to both construct the command trie and autocomplete from a command word to a command word and its usage. This static class simply contains a set of each command&#8217;s command word that is statically initialized and used by the commandTrie class.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="expiry-date"><a class="link" href="#expiry-date">3.5. Expiry date</a></h3>
+<div class="paragraph">
+<p>Expiry date indicates the date that information about a person is no longer useful. It is one of the fields of a person alongside name, email, etc.
+An <code>ExpiryDate</code> class contains a Date Value.</p>
+</div>
+<div class="paragraph">
+<p>Date validation is implemented in two steps:
+. Validating the date format with regular expression
+Where the date format is "YYYY-MM-DD"
+. Validating the date value with <code>SimpleDateFormat</code> object
+<code>DATE_FORMATTER</code>, a <code>SimpleDateFormat</code> object, is created and used for:
+Parsing String (from user input) to Date</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>ParsePosition parsePos = new ParsePosition(0);
+this.value = DATE_FORMATTER.parse(date, parsePos);</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Formatting Date to String (for printing)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>public String toString() {
+    return DATE_FORMATTER.format(value);
+}</pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.5.1. Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect:</strong> Implementation of ExpiryDate
+<strong>Alternative 1 (current choice):</strong> Store value as Date object
+<strong>Pros:</strong> Methods in Date class can be utilized in implementation of other functions involving ExpiryDate. Date formats doesn&#8217;t matter in most methods (eg: comparisons).
+<strong>Cons:</strong> Need to put more work into parsing (from String to Date) and formatting (Date to String).
+<strong>Alternative 2:</strong> Store value as String
+<strong>Pros:</strong> Easy to implement. Easy to print.
+<strong>Cons:</strong> Validation of date as String is complicated. Need to implement all ExpiryDate methods from scratch.</p>
+</div>
 </div>
 </div>
 </div>
@@ -2300,7 +2344,7 @@ for <code>RemarkCommandParser</code>.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-10-19 03:28:52 +00:00
+Last updated 2017-10-19 07:04:11 +00:00
 </div>
 </div>
 </body>
