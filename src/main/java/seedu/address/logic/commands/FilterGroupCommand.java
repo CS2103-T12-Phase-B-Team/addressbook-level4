@@ -10,8 +10,8 @@ public class FilterGroupCommand extends UndoableCommand {
 
     public static final String COMMAND_WORD = "filter";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + "Filters the displayed addressbook to present only "
-            + "the people in the group entered. Example: " + COMMAND_WORD + "Ho Chi Minh Tour Group";
+    public static final String MESSAGE_USAGE = COMMAND_WORD + " Filters the displayed addressbook to present only "
+            + "the people in the group entered. Example: " + COMMAND_WORD + " Ho Chi Minh Tour Group";
 
     public static final String MESSAGE_PARAMETERS = "[Group]";
 
@@ -24,7 +24,6 @@ public class FilterGroupCommand extends UndoableCommand {
     /**
      * Updates the filtered list to display only people with the proper group predicate
      */
-    @Override
     public CommandResult executeUndoableCommand() throws CommandException {
         model.updateFilteredPersonList(predicate);
         return new CommandResult(getMessageForPersonListShownSummary(model.getFilteredPersonList().size()));
