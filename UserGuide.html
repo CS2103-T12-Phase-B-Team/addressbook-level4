@@ -31,9 +31,16 @@
 <li><a href="#groups-code-group-code">2.2. Groups: <code>group</code></a></li>
 <li><a href="#addressbook-groups">2.3. Addressbook Groups:</a></li>
 <li><a href="#group-filter-code-filter-code">2.4. Group Filter: <code>filter</code></a></li>
+<li><a href="#person-image-code-image-code">2.5. Person Image: <code>image</code></a></li>
+<li><a href="#facebook-integration">2.6. Facebook Integration</a></li>
+<li><a href="#linkedin-integration">2.7. Linkedin Integration</a></li>
+<li><a href="#condensed-help">2.8. Condensed Help</a></li>
+<li><a href="#importing-database">2.9. Importing Database</a></li>
+<li><a href="#exporting-database">2.10. Exporting Database</a></li>
+<li><a href="#admin-permissions">2.11. Admin Permissions</a></li>
 </ul>
 </li>
-<li><a href="#features">3. Features</a>
+<li><a href="#v1-0-features">3. V1.0 Features</a>
 <ul class="sectlevel2">
 <li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
 <li><a href="#adding-a-person-code-add-code">3.2. Adding a person: <code>add</code></a></li>
@@ -46,17 +53,9 @@
 <li><a href="#listing-entered-commands-code-history-code">3.9. Listing entered commands : <code>history</code></a></li>
 <li><a href="#undo-previous-command-code-undo-code">3.10. Undo previous command : <code>undo</code></a></li>
 <li><a href="#redo-the-previously-undone-command-code-redo-code">3.11. Redo the previously undone command : <code>redo</code></a></li>
-<li><a href="#group-feature">3.12. Group feature</a></li>
-<li><a href="#facebook-integration">3.13. Facebook Integration</a></li>
-<li><a href="#google-integration">3.14. Google Integration</a></li>
-<li><a href="#linkedin-integration">3.15. LinkedIn Integration</a></li>
-<li><a href="#database-importing">3.16. Database Importing</a></li>
-<li><a href="#clearing-all-entries-code-clear-code">3.17. Clearing all entries : <code>clear</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">3.18. Exiting the program : <code>exit</code></a></li>
-<li><a href="#autocomplete-commands">3.19. Autocomplete commands</a></li>
-<li><a href="#command-shortcuts">3.20. Command shortcuts</a></li>
-<li><a href="#admin-permissions">3.21. Admin permissions</a></li>
-<li><a href="#saving-the-data">3.22. Saving the data</a></li>
+<li><a href="#clearing-all-entries-code-clear-code">3.12. Clearing all entries : <code>clear</code></a></li>
+<li><a href="#exiting-the-program-code-exit-code">3.13. Exiting the program : <code>exit</code></a></li>
+<li><a href="#saving-the-data">3.14. Saving the data</a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -159,10 +158,53 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p>Ability to filter the UI display to only display selected groups. Bar across the top of the UI displays the current groups. Since v1.3</p>
 </div>
 </div>
+<div class="sect2">
+<h3 id="person-image-code-image-code"><a class="link" href="#person-image-code-image-code">2.5. Person Image: <code>image</code></a></h3>
+<div class="paragraph">
+<p>Set and show an image for a person in the addressbook. Uses the index of a person to select them and a URL to the image path. Since v1.3.<br>
+e.g. <code>image 1 /home/user/someexample.jpg</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="facebook-integration"><a class="link" href="#facebook-integration">2.6. Facebook Integration</a></h3>
+<div class="paragraph">
+<p>Coming v2.0.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="linkedin-integration"><a class="link" href="#linkedin-integration">2.7. Linkedin Integration</a></h3>
+<div class="paragraph">
+<p>Coming v2.0.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="condensed-help"><a class="link" href="#condensed-help">2.8. Condensed Help</a></h3>
+<div class="paragraph">
+<p>Open a condensed help screen by default in place of the Google brwoser integration. Coming v1.5?.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="importing-database"><a class="link" href="#importing-database">2.9. Importing Database</a></h3>
+<div class="paragraph">
+<p>Import a working version of the database and the images associated to it from a directory specified. Coming v2.0.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exporting-database"><a class="link" href="#exporting-database">2.10. Exporting Database</a></h3>
+<div class="paragraph">
+<p>Export a working version of the database and the images associated to it to a directory specified. Coming v1.4/5?</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="admin-permissions"><a class="link" href="#admin-permissions">2.11. Admin Permissions</a></h3>
+<div class="paragraph">
+<p>Allow usage of dangerous commands such as clear, export and import. Coming v2.0.</p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="features"><a class="link" href="#features">3. Features</a></h2>
+<h2 id="v1-0-features"><a class="link" href="#v1-0-features">3. V1.0 Features</a></h2>
 <div class="sectionbody">
 <div class="exampleblock">
 <div class="content">
@@ -520,80 +562,27 @@ The <code>redo</code> command fails as there are no <code>undo</code> commands e
 </div>
 </div>
 <div class="sect2">
-<h3 id="group-feature"><a class="link" href="#group-feature">3.12. Group feature</a></h3>
-<div class="paragraph">
-<p>--TODO</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="facebook-integration"><a class="link" href="#facebook-integration">3.13. Facebook Integration</a></h3>
-<div class="paragraph">
-<p>--TODO<br>
---v2.0</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="google-integration"><a class="link" href="#google-integration">3.14. Google Integration</a></h3>
-<div class="paragraph">
-<p>--TODO</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="linkedin-integration"><a class="link" href="#linkedin-integration">3.15. LinkedIn Integration</a></h3>
-<div class="paragraph">
-<p>--TODO<br>
---v2.0</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="database-importing"><a class="link" href="#database-importing">3.16. Database Importing</a></h3>
-<div class="paragraph">
-<p>--TODO</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.17. Clearing all entries : <code>clear</code></a></h3>
+<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.12. Clearing all entries : <code>clear</code></a></h3>
 <div class="paragraph">
 <p><strong>Admin:</strong> Clears all entries from the address book.<br>
 Format: <code>clear</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.18. Exiting the program : <code>exit</code></a></h3>
+<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.13. Exiting the program : <code>exit</code></a></h3>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="autocomplete-commands"><a class="link" href="#autocomplete-commands">3.19. Autocomplete commands</a></h3>
-<div class="paragraph">
-<p>Automatically completes the command you are typing<br>
-Format: type the start of the command wanted --TODO</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="command-shortcuts"><a class="link" href="#command-shortcuts">3.20. Command shortcuts</a></h3>
-<div class="paragraph">
-<p>--TODO<br>
---Add to each feature?</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="admin-permissions"><a class="link" href="#admin-permissions">3.21. Admin permissions</a></h3>
-<div class="paragraph">
-<p>--TODO<br>
---v2.0?</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.22. Saving the data</a></h3>
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.14. Saving the data</a></h3>
 <div class="paragraph">
 <p>Address book data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
 </div>
 <div class="paragraph">
-<p><strong>Admin:</strong> You can also export a backup of the data to any directory using --TODO</p>
+<p><strong>Admin:</strong> Can export and import different databases - Coming v2.0.</p>
 </div>
 </div>
 </div>
@@ -606,7 +595,7 @@ There is no need to save manually.</p>
 <strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Address Book folder.</p>
 </div>
 <div class="paragraph">
-<p><strong>Q</strong>: Why do I need admin to access some of the features?<br>
+<p><strong>Q</strong>: Why do I need admin permissions to access some of the features?<br>
 <strong>A</strong>: This is in place to protect the content of the address book from misuse as well as adding another layer of protection from user error.</p>
 </div>
 </div>
@@ -650,6 +639,10 @@ e.g.<code>select 2</code></p>
 <li>
 <p><strong>Redo</strong> : <code>redo</code></p>
 </li>
+<li>
+<p><strong>Image</strong> : <code>image INDEX URL</code><br>
+e.g. <code>image 1 /home/user/someimage.jpg</code></p>
+</li>
 </ul>
 </div>
 </div>
@@ -657,7 +650,7 @@ e.g.<code>select 2</code></p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-10-26 07:16:58 +00:00
+Last updated 2017-10-26 10:07:15 +00:00
 </div>
 </div>
 </body>
