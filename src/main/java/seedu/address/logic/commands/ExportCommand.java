@@ -1,0 +1,79 @@
+package seedu.address.logic.commands;
+
+import static java.util.Objects.requireNonNull;
+
+import seedu.address.commons.core.index.Index;
+import seedu.address.logic.commands.exceptions.CommandException;
+/**
+ * This command is used to export a compressed version of the working addressbook and the images saved
+ */
+
+public class ExportCommand extends UndoableCommand {
+
+    public static final String COMMAND_WORD = "export";
+
+    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Exports a compressed copy of the working addressbook  "
+            + "Existing files will be replaced.\n"
+            + "Parameters: [FILEPATH] \n"
+            + "Example: " + COMMAND_WORD + " C:\\Users\\Admin\\Desktop\\.";
+
+    public static final String MESSAGE_EXPORT_PATH_FAIL =
+            "This specified path cannot be read.";
+
+    public static final String MESSAGE_EXPORT_SUCCESS = "Addressbook has been exported.";
+
+    private Index index;
+    private String path;
+
+    public ExportCommand(Index index, String path) {
+        requireNonNull(index);
+        requireNonNull(path);
+
+        this.path = path;
+        this.index = index;
+    }
+
+    /**
+     * Executes the command
+     * @return a success message
+     * @throws CommandException
+     */
+    public CommandResult executeUndoableCommand() throws CommandException {
+        return null;
+    }
+
+    /**
+     * Generates success messages
+     * @return Message
+     */
+    private String generateSuccessMessage() {
+        return MESSAGE_EXPORT_SUCCESS;
+    }
+
+    /**
+     * Generates failure messages
+     * @return Message
+     */
+    private String generateFailureMessage() {
+        return MESSAGE_EXPORT_PATH_FAIL;
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        // short circuit if same object
+        if (other == this) {
+            return true;
+        }
+
+        // instanceof handles nulls
+        if (!(other instanceof ExportCommand)) {
+            return false;
+        }
+
+        // state check
+        ExportCommand e = (ExportCommand) other;
+        return index.equals(e.index)
+                && path.equals(e.path);
+    }
+}
+
