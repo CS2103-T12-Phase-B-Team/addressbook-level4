@@ -2,7 +2,6 @@ package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
 
-import seedu.address.commons.core.index.Index;
 import seedu.address.logic.commands.exceptions.CommandException;
 /**
  * This command is used to export a compressed version of the working addressbook and the images saved
@@ -22,15 +21,12 @@ public class ExportCommand extends UndoableCommand {
 
     public static final String MESSAGE_EXPORT_SUCCESS = "Addressbook has been exported.";
 
-    private Index index;
     private String path;
 
-    public ExportCommand(Index index, String path) {
-        requireNonNull(index);
+    public ExportCommand(String path) {
         requireNonNull(path);
 
         this.path = path;
-        this.index = index;
     }
 
     /**
@@ -72,8 +68,7 @@ public class ExportCommand extends UndoableCommand {
 
         // state check
         ExportCommand e = (ExportCommand) other;
-        return index.equals(e.index)
-                && path.equals(e.path);
+        return path.equals(e.path);
     }
 }
 
