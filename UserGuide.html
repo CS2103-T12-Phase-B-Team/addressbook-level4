@@ -151,11 +151,53 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="paragraph">
 <p>The address book stores all user created groups and allows the user to add people into existing groups. Since v1.3</p>
 </div>
+<div class="paragraph">
+<p>Format:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>group [name]</code> creates a group called [name] if one doesn&#8217;t already exist. If one does, it will be deleted.</p>
+</li>
+<li>
+<p><code>group [name] [names&#8230;&#8203;]</code> creates a group called [name] and will add the people in the following arguments to it.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>group trip Alice Bernice Grant</code></p>
+</li>
+<li>
+<p><code>group trip</code></p>
+</li>
+</ul>
+</div>
 </div>
 <div class="sect2">
 <h3 id="group-filter-code-filter-code"><a class="link" href="#group-filter-code-filter-code">2.4. Group Filter: <code>filter</code></a></h3>
 <div class="paragraph">
 <p>Ability to filter the UI display to only display selected groups. Bar across the top of the UI displays the current groups. Since v1.3</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>filter [groupname]</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>filter none</code></p>
+</li>
+<li>
+<p><code>filter trip</code></p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
@@ -650,7 +692,7 @@ e.g. <code>image 1 /home/user/someimage.jpg</code></p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-01 05:06:19 +00:00
+Last updated 2017-11-01 05:20:00 +00:00
 </div>
 </div>
 </body>
