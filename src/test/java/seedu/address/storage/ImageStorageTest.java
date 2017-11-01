@@ -10,7 +10,7 @@ import org.junit.rules.ExpectedException;
 
 public class ImageStorageTest {
 
-    private static String PATH = "images/default.png";
+    private static String PATH = "data/default.png";
 
     @Rule
     public ExpectedException thrown = ExpectedException.none();
