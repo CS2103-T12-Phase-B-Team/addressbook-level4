@@ -54,6 +54,7 @@
 <li><a href="#expiry-date">3.5. Expiry date</a></li>
 <li><a href="#groups">3.6. Groups</a></li>
 <li><a href="#person-image">3.7. Person Image</a></li>
+<li><a href="#export">3.8. Export</a></li>
 </ul>
 </li>
 <li><a href="#testing">4. Testing</a>
@@ -1051,7 +1052,7 @@ this.value = DATE_FORMATTER.parse(date, parsePos);</pre>
 <strong>Cons:</strong> Longer code that requires more testing<br>
 <strong>Alternative 2:</strong> Store the bytes of each image encoded using base64<br>
 <strong>Pros:</strong> Shorter code and easier to move the addressbook database.<br>
-<strong>Cons:</strong> More complex code and a bloated addressbook file size that is easily corruptible.
+<strong>Cons:</strong> More complex code and a bloated addressbook file size that is easily corruptible.<br>
 <strong>Alternative 3:</strong> Allow only images from the web to be added using their URL<br>
 <strong>Pros:</strong> No need to store the image locally so less space needed and an easier way to export/import the database.<br>
 <strong>Cons:</strong> Image is lost if there is no internet connection or if the image is taken down.</p>
@@ -1064,6 +1065,27 @@ this.value = DATE_FORMATTER.parse(date, parsePos);</pre>
 <strong>Alternative 2:</strong> Each image is named after each person&#8217;s names/other property<br>
 <strong>Pros:</strong> Readable by humans and easy to associate with a person in the addressbook<br>
 <strong>Cons:</strong> Causes conflicts when different contacts have the same properties (email addresses have to be unique)</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="export"><a class="link" href="#export">3.8. Export</a></h3>
+<div class="paragraph">
+<p>A feature that allows the user to export the addressbook and images saved to a compressed file.</p>
+</div>
+<div class="paragraph">
+<p><code>The command is a WIP.</code></p>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">3.8.1. Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect:</strong> Export file type.<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Aspect:</strong> Export path.<br></p>
+</div>
+<div class="paragraph">
+<p><code>WIP</code></p>
 </div>
 </div>
 </div>
@@ -2496,7 +2518,7 @@ for <code>RemarkCommandParser</code>.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-01 05:20:00 +00:00
+Last updated 2017-11-02 02:18:20 +00:00
 </div>
 </div>
 </body>
