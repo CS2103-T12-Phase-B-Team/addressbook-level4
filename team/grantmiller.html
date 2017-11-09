@@ -116,71 +116,11 @@
 <div class="paragraph">
 <p><mark>Start of Extract [from: User Guide]</mark></p>
 </div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="person-code-group-code"><a class="link" href="#person-code-group-code">Person: <code>group</code></a></h3>
-<div class="paragraph">
-<p>Each person can now be assigned a group. The group is used to sort people into specific tours for the tourguide. Since v1.2</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="addressbook-groups-code-group-code"><a class="link" href="#addressbook-groups-code-group-code">Addressbook Groups: <code>group</code></a></h3>
-<div class="paragraph">
-<p>The address book stores all user created groups and allows the user to add people into existing groups. Names must be one word and be unique. Since v1.3</p>
-</div>
-<div class="paragraph">
-<p>Format:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>group [name]</code> creates a group called [name] if one doesn&#8217;t already exist. If one does, it will be deleted.</p>
-</li>
-<li>
-<p><code>group [name] [names&#8230;&#8203;]</code> creates a group called [name] and will add the people in the following arguments to it.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>group trip Alice Bernice Grant</code> &#8594; creates a group called trip with Alice, Bernice, and Grant</p>
-</li>
-<li>
-<p><code>group trip</code> &#8594; deletes the previously created 'trip' group</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="group-filter-code-filter-code"><a class="link" href="#group-filter-code-filter-code">Group Filter: <code>filter</code></a></h3>
-<div class="paragraph">
-<p>Ability to filter the UI display to only display selected groups. Bar across the top of the UI displays the current groups. The default filter is none and is applied to everyone in the addressbook. Since v1.3</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>filter [groupname]</code></p>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>filter none</code></p>
-</li>
-<li>
-<p><code>filter trip</code></p>
-</li>
-</ul>
-</div>
 <div class="paragraph">
 <p><mark>End of Extract</mark></p>
 </div>
 <hr>
+</div>
 <div class="sect3">
 <h4 id="justification-2"><a class="link" href="#justification-2">Justification</a></h4>
 <div class="paragraph">
@@ -192,6 +132,55 @@
 <hr>
 <div class="paragraph">
 <p><mark>Start of Extract [from: Developer Guide]</mark></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="groups"><a class="link" href="#groups">Groups</a></h3>
+<div class="paragraph">
+<p>The groups feature is implemented in every component of the addressbook. In the logic section, there are two new commands: group and filter. The group command takes care of creating, adding to, and deleting a group. The default group selection is "none", and it cannot be deleted. If a group is deleted, then a person is assigned the none group.</p>
+</div>
+<div class="paragraph">
+<p>In the model section, there is a new field in the person object for a group. This object simply contains the group name. In the addressbook, class there&#8217;s now a uniqueGroupList. This field is similar to the implementation for the Person List or Tag list. It keeps track of all groups within the addressbook and is used to sync when new groups are added or groups are deleted.</p>
+</div>
+<div class="paragraph">
+<p>In storage, the xml files have been updated to include the uniqueGroupList elements (XMLAdaptedGroup), as well as storing the group field for each person.</p>
+</div>
+<div class="paragraph">
+<p>In UI, there&#8217;s now a list view that in a split panel that shows the menu on the left, and each created group on the right. Selecting a group will update the filtered list view to display only people in the selected group.</p>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect:</strong> Implementation of Groups vs Using Tags<br>
+<strong>Alternative 1 (current choice):</strong> Use Groups to filter view<br>
+<strong>Pros:</strong> Groups and tags can provide a more dynamic way of sorting your addressbook<br>
+<strong>Cons:</strong> Need whole new data structures to store groups and UI interfaces for presenting groups to user<br>
+<strong>Alternative 2:</strong> Use tags to filter view<br>
+<strong>Pros:</strong> Easy to implement in UI, easy to implement filter<br>
+<strong>Cons:</strong> Tags are used to describe a person, while groups should be used to categorize. For example a tag may be friend, while the group would be Americans or Singaporeans. Having groups separate from tags allows for a more nuanced use of addressbook.</p>
+</div>
+<hr>
+<div class="paragraph">
+<p><strong>Aspect:</strong> Implementation of Groups using UniqueGroupList<br>
+<strong>Alternative 1 (current choice):</strong> Use UniqueGroupList and add method for existence in list+
+<strong>Pros:</strong> Fits the current model for Persons and Tags and adds an easy way to check if a group exists without raising an exception+
+<strong>Cons:</strong> Deviates a bit from the past implementation for the other uniqueLists+
+<strong>Alternative 2:</strong> Use UniqueGroupList similar to UniquePersonList+
+<strong>Pros:</strong> Fits model for other structures in addressbook+
+<strong>Cons:</strong> Has some exceptions that make code cluttered and unclear+
+<strong>Alternative 3:</strong> Use basic List Structure+
+<strong>Pros:</strong> Easy to implement+
+<strong>Cons:</strong> Would require extensive modifications to fit the existing model for addressbook</p>
+</div>
+<div class="paragraph">
+<p><strong>Aspect:</strong> Placement of group selection listener<br>
+<strong>Alternative 1 (current choice):</strong> Placed in MainWindow and modified CommandBox for CLI-less command execution<br>
+<strong>Pros:</strong> Allows transparent execution of filter command and output into the result box using existing model as well as keeps listeners in the same class<br>
+<strong>Cons:</strong> Overloads execution method and has a public method in CommandBox for executing command<br>
+<strong>Alternative 2:</strong> Place listener in CommandBox<br>
+<strong>Pros:</strong> Keeps the listener in the same class as the execute method<br>
+<strong>Cons:</strong> Clutters CommandBox by adding a listener to a class that doesn&#8217;t have any</p>
 </div>
 <div class="paragraph">
 <p><mark>End of Extract</mark></p>
@@ -214,7 +203,7 @@
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-09 03:46:03 +00:00
+Last updated 2017-11-09 03:49:02 +00:00
 </div>
 </div>
 </body>
