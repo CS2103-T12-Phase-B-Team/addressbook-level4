@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 1.5.3">
+<title>Lau Yung - Project Portfolio</title>
+<link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css">
+</head>
+<body class="article">
+<div id="header">
+<h1>Lau Yung - Project Portfolio</h1>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="project-addressbook-level-4"><a class="link" href="#project-addressbook-level-4">Project: AddressBook - Level 4</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>AddressBook - Level 4 is a desktop address book application used for teaching Software Engineering principles. The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 6 kLoC.</p>
+</div>
+<div class="paragraph">
+<p><strong>Code contributed</strong>: [<a href="https://github.com/CS2103AUG2017-T12-B4/main/blob/master/collated/main/lauy99.md">Functional Code</a> [<a href="https://github.com/CS2103AUG2017-T12-B4/main/blob/master/collated/test/lauy99.md">Test Code</a>]</p>
+</div>
+<div class="sect2">
+<h3 id="enhancement-added-expiry-date"><a class="link" href="#enhancement-added-expiry-date">Enhancement Added: Expiry Date</a></h3>
+<div class="sect3">
+<h4 id="external-behavior"><a class="link" href="#external-behavior">External behavior</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: User Guide]</mark></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="expiry-date-code-expire-code"><a class="link" href="#expiry-date-code-expire-code">Expiry Date: <code>expire</code></a></h3>
+<div class="paragraph">
+<p>Set the expiry date of a person.
+Format: <code>expire INDEX [d/EXPIRY DATE]</code></p>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+<code>expire 1 d/2017-10-31</code>
+Will set the expiry date of the first person to 2017-10-31.<br>
+<code>expire 1</code>
+Will remove the expiry date of the first person.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+By omitting the expiry date field in the command, the expiry date set will be removed.<br>
+Expiry date should be in the format YYYY/MM/DD
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+<div class="sect3">
+<h4 id="justification"><a class="link" href="#justification">Justification</a></h4>
+<hr>
+<div class="paragraph">
+<p>Since our product targets tour guides who need to deal with a lot of one-off contact information,
+expiry date can be used to keep track of when the person will become irrelevant,
+avoiding problems like duplicate names, or too many persons slowing down the application.
+Expiry date can also be utilized to implement auto-delete feature.
+By checking if the expiry date has passed,
+the application can remove expired contents for the user at startup.
+---</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: Developer Guide]</mark></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="expiry-date"><a class="link" href="#expiry-date">Expiry date</a></h3>
+<div class="paragraph">
+<p>Expiry date indicates the date that information about a person is no longer useful. It is one of the fields of a person alongside name, email, etc.
+An <code>ExpiryDate</code> class contains a <code>Date</code> Value.</p>
+</div>
+<div class="paragraph">
+<p>Date validation is implemented in two steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Validating the date format with regular expression<br>
+Where the date format is "YYYY-MM-DD"</p>
+</li>
+<li>
+<p>Validating the date value with <code>SimpleDateFormat</code> object<br>
+<code>DATE_FORMATTER</code>, a <code>SimpleDateFormat</code> object, is created and used for:</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Parsing String (from user input) to Date</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>ParsePosition parsePos = new ParsePosition(0);
+this.value = DATE_FORMATTER.parse(date, parsePos);</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Formatting Date to String (for printing)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>public String toString() {
+    return DATE_FORMATTER.format(value);
+}</pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect:</strong> Implementation of ExpiryDate<br>
+<strong>Alternative 1 (current choice):</strong> Store value as Date object<br>
+<strong>Pros:</strong> Methods in Date class can be utilized in implementation of other functions involving <code>ExpiryDate</code>. Date formats doesn&#8217;t matter in most methods (eg: comparisons).<br>
+<strong>Cons:</strong> Need to put more work into parsing (from String to Date) and formatting (Date to String).<br>
+<strong>Alternative 2:</strong> Store value as String<br>
+<strong>Pros:</strong> Easy to implement. Easy to print.<br>
+<strong>Cons:</strong> Validation of date as String is complicated. Need to implement all ExpiryDate methods from scratch.</p>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enhancement-proposed-add-feature-code-autodelete-code"><a class="link" href="#enhancement-proposed-add-feature-code-autodelete-code">Enhancement Proposed: Add feature <code>autodelete</code></a></h3>
+<hr>
+<div class="paragraph">
+<p>As mentioned, it is very likely for tour guides to have a lot of persons that are no longer relevant in their addressbook,
+<code>autodelete</code> can remove expired persons from their addressbook,
+saving the time needed to delete those persons one by one with <code>delete</code>.</p>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="other-contributions"><a class="link" href="#other-contributions">Other contributions</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Bugs reported to Team W13-B3
+(<a href="https://github.com/CS2103AUG2017-W13-B3/main/issues/107">Issue #107</a>,
+<a href="https://github.com/CS2103AUG2017-W13-B3/main/issues/103">Issue #103</a>)</p>
+</li>
+<li>
+<p>Suggested enhancement to Team W13-B3
+(<a href="https://github.com/CS2103AUG2017-W13-B3/main/issues/110">Issue #110</a>)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2017-11-09 02:10:13 +00:00
+</div>
+</div>
+</body>
+</html>
