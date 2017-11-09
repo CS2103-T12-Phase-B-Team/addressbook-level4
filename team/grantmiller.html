@@ -95,7 +95,36 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Upon the pressing of the tab key, the command box calls attemptAutoComplete, in the commandTrie class. This method will traverse the trie using the content of the command box. If the input has a character not present in the trie, then the attempt fails. If the trie parses through the input but reaches a node with a next option, it also fails. If the trie parses the input and reaches a node with only children, it will autocomplete the input to a valid command. If the autocomplete fails, the text is turned red.</p>
+<p>Upon the pressing of the tab key, the command box calls attemptAutoComplete, in the commandTrie class. This method will traverse the trie using the content of the command box. If the input has a character not present in the trie, then the attempt fails. If the trie parses through the input but reaches a node with a next option, it will attempt to provide the user with possible commands for a given input. In this case, a dropdown box will appear in the UI that lists the possible commands for the user. This is accomplished using a recursive searching of the trie that follows each possible path and returns a set of possible commands.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre> private List&lt;String&gt; recursiveGetOptions(Node start, String stub) {
+        List&lt;String&gt; options = new ArrayList&lt;&gt;();
+        StringBuilder output = new StringBuilder();
+        output.append(stub);
+
+        while (!isLeaf(start)) {
+            if (start.hasNext()) {
+                options.addAll(recursiveGetOptions(start.getNext(), output.toString()));
+                if (start.hasChild()) {
+                    output.append(start.getKey());
+                    options.addAll(recursiveGetOptions(start.getChild(), output.toString()));
+                }
+                return options;
+            } else {
+                output.append(start.getKey());
+                start = start.getChild();
+            }
+        }
+        output.append(start.getKey());
+        options.add(output.toString());
+        return options;
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If the trie parses the input and reaches a node with only children, it will autocomplete the input to a valid command. If the autocomplete fails, the text is turned red.</p>
 </div>
 <div class="paragraph">
 <p>An added functionality is that if the user presses tab again, the command will add a usage framework for the command, i.e. find will be autocompleted to find [names]. This helps the user to understand command usage. If tab is pressed again, the input simply reverts back to the command.</p>
@@ -203,7 +232,7 @@
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-09 03:49:02 +00:00
+Last updated 2017-11-09 03:53:28 +00:00
 </div>
 </div>
 </body>
