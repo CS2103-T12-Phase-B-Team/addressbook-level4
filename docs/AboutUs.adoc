@@ -13,7 +13,7 @@ Role: In charge of Storage
 
 '''
 
-=== https://cs2103aug2017-t12-b4.github.io/main/team/grantmiller.html[Grant Miller]
+=== https://cs2103aug2017-t12-b4.github.io/main/team/grantmiller.html[Grant Conrad Miller]
 image::grantcm.png[width="150", align="left"]
 
 Role: Integration, Code Quality, Testing
